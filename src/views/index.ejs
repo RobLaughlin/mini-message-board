@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Messageboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="background w-full h-dvh bg-linear-to-br from-black to-blue-800 absolute">
+    <div class="postMessageContainer min-w-lg w-1/2 text-white h-[300px] m-auto">
+      <div class="mt-8 p-8 bg-linear-to-r from-purple-600 to-blue-600 rounded-t-2xl border-b-2 border-gray-400">
+        <h1 class="text-6xl m-auto roboto-text text-center text-white text-shadow-lg/40">Post a message</h1>
+      </div>
+      <form action="POST">
+        <div class="formContainer grid grid-cols-2 gap-4 p-8 bg-blue-50 rounded-b-md">
+          <div class="inputGroup flex flex-wrap">
+            <label for="Name" class="w-full mb-1 text-lg roboto-bold-text text-black">Name</label>
+            <input id="Name" name="name" type="text" placeholder="Guest" class="bg-white text-black w-full p-2 rounded-md" />
+          </div>
+          <div class="inputGroup flex flex-wrap">
+            <label for="Title" class="w-full mb-1 text-lg roboto-bold-text text-black">Title</label>
+            <input id="Title" name="title" type="text" placeholder="My Message Title" class="bg-white text-black w-full p-2 rounded-md" />
+          </div>
+          <div class="inputGroup flex flex-wrap col-span-2">
+            <label for="Message" class="w-full mb-1 text-lg roboto-bold-text text-black">Message</label>
+            <textarea id="Message" name="message" placeholder="My Message" class="bg-white text-black w-full p-2 rounded-md field-sizing-[normal] resize-none overflow-hidden max-h-[300px]" contenteditable onInput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';"></textarea>
+            <p class="w-full text-gray-600 pt-2">0/200 Characters</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
