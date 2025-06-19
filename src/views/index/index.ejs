@@ -12,8 +12,8 @@
 </head>
 
 <body>
-  <div class="background w-full h-dvh bg-linear-to-br from-black to-blue-800 absolute">
-    <div class="postMessageContainer min-w-lg w-1/2 text-white h-[300px] m-auto">
+  <div class="background w-full h-dvh grid grid-rows-[auto auto auto] bg-linear-to-br from-black to-blue-800 absolute">
+    <div class="postMessageContainer min-w-lg w-1/2 h-[1fr] text-white m-auto">
       <div class="mt-8 p-8 bg-linear-to-r from-purple-600 to-blue-600 rounded-t-2xl border-b-2 border-gray-400">
         <h1 class="text-6xl m-auto roboto-text text-center text-white text-shadow-lg/40">Post a message</h1>
       </div>
@@ -29,13 +29,19 @@
           </div>
           <div class="inputGroup flex flex-wrap col-span-2">
             <label for="Message" class="w-full mb-1 text-lg roboto-bold-text text-black">Message</label>
-            <textarea id="Message" name="message" placeholder="My Message" class="bg-white text-black w-full p-2 rounded-md field-sizing-[normal] resize-none overflow-hidden max-h-[300px]" contenteditable onInput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';"></textarea>
-            <p class="w-full text-gray-600 pt-2">0/200 Characters</p>
+            <textarea id="Message" name="message" placeholder="My Message" class="bg-white text-black w-full p-2 rounded-md field-sizing-[normal] resize-none overflow-hidden max-h-[300px]" contenteditable onInput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';" maxlength="1000"></textarea>
+            <p id="CharacterCount" class="w-full text-gray-600 pt-2">0/1000 Characters</p>
           </div>
         </div>
       </form>
     </div>
+    <div class="messageContainer w-full bg-amber-50/30 row-span-2 grid grid-cols-12 gap-16">
+      <div class="message">
+
+      </div>
+    </div>
   </div>
 </body>
+<script src="/js/index/index.js" type="text/javascript"></script>
 
 </html>
