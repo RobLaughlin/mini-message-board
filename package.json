@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run build && npm run start",
+    "dev": "npm run build && concurrently \"npm run start\" \" npm run watch:ts\" \" npm run watch:css\" \" npm run watch:ejs\" --names \"server,ts-watch,css-watch,ejs-watch\"",
     "clean": "rimraf dist/*",
-    "build:css": "npx @tailwindcss/cli -i ./src/views/**/*.css -o ./src/public/css/styles.css",
+    "watch:ts": "nodemon --watch src -e ts --exec \"npx tsc\"",
+    "watch:ejs": "nodemon --watch src -e ejs --exec \"copyfiles -u 1 src/**/*.ejs dist -V\"",
+    "watch:css": "nodemon --watch src -e css --exec \"npm run build:css\"",
+    "build:css": "npx @tailwindcss/cli -i ./src/views/**/*.css -o ./dist/public/css/styles.css",
     "build": "npm run clean && npx tsc && npm run build:css && npm run copy-assets",
-    "start": "node dist/app.js",
+    "start": "nodemon dist/app.js",
     "copy-assets": "npx tsx tools/copyAssets"
   },
   "repository": {
@@ -24,6 +27,7 @@
   },
   "homepage": "https://github.com/RobLaughlin/mini-message-board#readme",
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
