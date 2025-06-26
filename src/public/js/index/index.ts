@@ -1,7 +1,6 @@
 const messageBox: HTMLTextAreaElement | null =
     document.querySelector("#Message");
 
-console.log(messageBox);
 messageBox?.addEventListener("input", handleMessageBoxChanged);
 
 function handleMessageBoxChanged(e: Event) {

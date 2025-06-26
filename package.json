@@ -7,7 +7,7 @@
     "dev": "npm run build && concurrently \"npm run start\" \" npm run watch:ts\" \" npm run watch:css\" \" npm run watch:ejs\" --names \"server,ts-watch,css-watch,ejs-watch\"",
     "clean": "rimraf dist/*",
     "watch:ts": "nodemon --watch src -e ts --exec \"npx tsc\"",
-    "watch:ejs": "nodemon --watch src -e ejs --exec \"copyfiles -u 1 src/**/*.ejs dist -V\"",
+    "watch:ejs": "nodemon --watch src -e ejs --exec \"npm run build:css && copyfiles -u 1 src/**/*.ejs dist -V\"",
     "watch:css": "nodemon --watch src -e css --exec \"npm run build:css\"",
     "build:css": "npx @tailwindcss/cli -i ./src/views/**/*.css -o ./dist/public/css/styles.css",
     "build": "npm run clean && npx tsc && npm run build:css && npm run copy-assets",
