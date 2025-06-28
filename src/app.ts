@@ -1,6 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import path from "path";
+import { messages } from "./models/messages/messages.js";
 
 const PORT = process.env.PORT || 3001;
 
@@ -10,8 +11,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (_, res) => {
-    res.render("index");
-    // res.send("YOO");
+    res.render("index", { messages });
 });
 
 app.listen(PORT, () => {

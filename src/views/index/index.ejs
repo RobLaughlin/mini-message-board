@@ -13,7 +13,7 @@
 
 <body>
   <div class="background w-full h-dvh grid grid-rows-[auto auto auto] bg-linear-to-br from-black to-blue-800 absolute">
-    <div class="postMessageContainer min-w-lg w-1/2 h-[1fr] text-white m-auto">
+    <div class="postMessageContainer min-w-lg w-3/4 h-[1fr] text-white m-auto pb-8">
       <div class="mt-8 p-8 bg-linear-to-r from-purple-600 to-blue-600 rounded-t-2xl border-b-2 border-gray-400">
         <h1 class="text-6xl m-auto roboto-text text-center text-white text-shadow-lg/40">Post a message</h1>
       </div>
@@ -21,27 +21,41 @@
         <div class="formContainer grid grid-cols-2 gap-4 p-8 bg-blue-50 rounded-b-md">
           <div class="inputGroup flex flex-wrap">
             <label for="Name" class="w-full mb-1 text-lg roboto-bold-text text-black">Name</label>
-            <input id="Name" name="name" type="text" placeholder="Guest" class="bg-white text-black w-full p-2 rounded-md" />
+            <input id="Name" name="name" type="text" placeholder="Guest" class="bg-white text-black w-full p-2 rounded-md" maxlength="30" />
           </div>
           <div class="inputGroup flex flex-wrap">
             <label for="Title" class="w-full mb-1 text-lg roboto-bold-text text-black">Title</label>
-            <input id="Title" name="title" type="text" placeholder="My Message Title" class="bg-white text-black w-full p-2 rounded-md" />
+            <input id="Title" name="title" type="text" placeholder="My Message Title" class="bg-white text-black w-full p-2 rounded-md" maxlength="50" />
           </div>
           <div class="inputGroup flex flex-wrap col-span-2">
             <label for="Message" class="w-full mb-1 text-lg roboto-bold-text text-black">Message</label>
             <textarea id="Message" name="message" placeholder="My Message" class="bg-white text-black w-full p-2 rounded-md field-sizing-[normal] resize-none overflow-hidden max-h-[300px]" contenteditable onInput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';" maxlength="1000"></textarea>
             <p id="CharacterCount" class="w-full text-gray-600 pt-2">0/1000 Characters</p>
           </div>
-          <div class="inputGroup flex flex-wrap col-span-2">
+          <!-- <div class="inputGroup flex flex-wrap col-span-2">
             <button>testsaaa</button>
-          </div>
+          </div> -->
         </div>
       </form>
     </div>
-    <div class="messageContainer w-full bg-amber-200 row-span-2 grid grid-cols-12 gap-16">
-      <div class="message">
-        testing
+    <div class="messageContainer w-full bg-amber-50 row-span-2 grid grid-cols-3 gap-4">
+      <% messages.forEach(message => { %>
+      <%- include('message', {message}); %>
+      <% }); %>
+      <!-- <div class="message bg-blue-100 m-4 rounded-t-xl grid grid-rows-[100px_1fr]">
+        <div class="header bg-gradient-to-b from-blue-300 to-blue-100 p-4 border-b-sky-500 border-b-1 rounded-t-xl flex flex-col">
+          <div class="headerText my-auto roboto-text">
+            <p class="user text-xl">User 1</p>
+            <p class="date text-lg">Date</p>
+          </div>
+        </div>
+        <div class="body p-4 roboto-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus quis eum incidunt eos cumque, dicta adipisci reprehenderit nobis ab aliquid quia natus unde porro illum fugiat, odio odit necessitatibus dignissimos.
+        </div>
       </div>
+      <div class="message bg-blue-50">
+        testing2
+      </div> -->
     </div>
   </div>
 </body>

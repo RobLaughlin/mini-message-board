@@ -21,3 +21,15 @@
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
+
+.message-sm {
+    grid-column: auto / span 1;
+}
+
+.message-md {
+    grid-column: auto / span 2;
+}
+
+.message-lg {
+    grid-column: auto / span 3;
+}
