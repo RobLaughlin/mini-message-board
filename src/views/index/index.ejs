@@ -13,7 +13,7 @@
 
 <body>
   <div class="background w-full h-dvh grid grid-rows-[auto auto auto] bg-linear-to-br from-black to-blue-800 absolute">
-    <div class="postMessageContainer min-w-lg w-3/4 h-[1fr] text-white m-auto pb-8">
+    <div class="postMessageContainer min-w-lg w-1/2 h-[1fr] text-white m-auto pb-8">
       <div class="mt-8 p-8 bg-linear-to-r from-purple-600 to-blue-600 rounded-t-2xl border-b-2 border-gray-400">
         <h1 class="text-6xl m-auto roboto-text text-center text-white text-shadow-lg/40">Post a message</h1>
       </div>
@@ -32,9 +32,11 @@
             <textarea id="Message" name="message" placeholder="My Message" class="bg-white text-black w-full p-2 rounded-md field-sizing-[normal] resize-none overflow-hidden max-h-[300px]" contenteditable onInput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';" maxlength="1000"></textarea>
             <p id="CharacterCount" class="w-full text-gray-600 pt-2">0/1000 Characters</p>
           </div>
-          <!-- <div class="inputGroup flex flex-wrap col-span-2">
-            <button>testsaaa</button>
-          </div> -->
+          <div class="inputGroup flex flex-wrap col-span-2">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-1/2 text-center m-auto cursor-pointer">
+              Submit Message
+            </button>
+          </div>
         </div>
       </form>
     </div>
