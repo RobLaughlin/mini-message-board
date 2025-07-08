@@ -21,15 +21,15 @@
         <div class="formContainer grid grid-cols-2 gap-4 p-8 bg-blue-50 rounded-b-md">
           <div class="inputGroup flex flex-wrap">
             <label for="Name" class="w-full mb-1 text-lg roboto-bold-text text-black">Name</label>
-            <input id="Name" name="name" type="text" placeholder="Guest" class="bg-white text-black w-full p-2 rounded-md" maxlength="30" />
+            <input id="Name" name="name" type="text" placeholder="Guest" class="bg-white text-black w-full p-2 rounded-md invalid:not-placeholder-shown:border-red-400 border-solid border-1 valid:border-green-400 valid:border-2 outline-0" maxlength="30" required />
           </div>
           <div class="inputGroup flex flex-wrap">
             <label for="Title" class="w-full mb-1 text-lg roboto-bold-text text-black">Title</label>
-            <input id="Title" name="title" type="text" placeholder="My Message Title" class="bg-white text-black w-full p-2 rounded-md" maxlength="50" />
+            <input id="Title" name="title" type="text" placeholder="My Message Title" class="bg-white text-black w-full p-2 rounded-md invalid:not-placeholder-shown:border-red-400 border-solid border-1 valid:border-green-400 valid:border-2 outline-0" maxlength="50" required />
           </div>
           <div class="inputGroup flex flex-wrap col-span-2">
             <label for="Message" class="w-full mb-1 text-lg roboto-bold-text text-black">Message</label>
-            <textarea id="Message" name="message" placeholder="My Message" class="bg-white text-black w-full p-2 rounded-md field-sizing-[normal] resize-none overflow-hidden max-h-[300px]" contenteditable onInput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';" maxlength="1000"></textarea>
+            <textarea id="Message" name="message" placeholder="My Message" class=" bg-white text-black w-full p-2 rounded-md field-sizing-[normal] resize-none overflow-hidden max-h-[300px] invalid:not-placeholder-shown:border-red-400 border-solid border-1 valid:border-green-400 valid:border-2 outline-0" contenteditable onInput="this.style.height = ''; this.style.height = this.scrollHeight + 'px';" maxlength="1000" required></textarea>
             <p id="CharacterCount" class="w-full text-gray-600 pt-2">0/1000 Characters</p>
           </div>
           <div class="inputGroup flex flex-wrap col-span-2">
