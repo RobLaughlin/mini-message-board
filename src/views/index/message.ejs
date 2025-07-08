@@ -1,8 +1,9 @@
-<div class="message bg-blue-100 m-4 rounded-t-xl grid grid-rows-[125px_1fr] <%= message.colspan %> rounded-b-sm">
+<div class="message bg-blue-100 m-4 rounded-t-xl grid grid-rows-[auto_1fr] <%= message.colspan %> rounded-b-sm">
   <div class="header bg-gradient-to-b from-blue-300 to-blue-100 p-4 border-b-sky-500 border-b-1 rounded-t-xl flex flex-col">
     <div class="headerText my-auto roboto-text">
       <p class="user text-xl"><%= message.name%></p>
-      <p class="date text-lg pt-4"><%= message.added.toLocaleDateString() %></p>
+      <p class="user text-lg pt-1"><%= message.title%></p>
+      <p class="date text-lg pt-2"><%= message.added.toLocaleDateString() %></p>
       <p class="time text-md"><%= message.added.toLocaleTimeString() %></p>
     </div>
   </div>
