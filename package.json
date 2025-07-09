@@ -10,9 +10,9 @@
     "watch:ejs": "nodemon --watch src -e ejs --exec \"npm run build:css && copyfiles -u 1 src/**/*.ejs dist -V\"",
     "watch:css": "nodemon --watch src -e css --exec \"npm run build:css\"",
     "build:css": "npx @tailwindcss/cli -i ./src/views/**/*.css -o ./dist/public/css/styles.css",
-    "build": "npm run clean && npx tsc && npm run build:css && npm run copy-assets",
+    "build": "npm run clean && npx tsc && npm run copy-assets && npm run build:css",
     "start": "nodemon dist/app.js",
-    "copy-assets": "npx tsx tools/copyAssets"
+    "copy-assets": "npx tsx tools/copyAssets && copyfiles -u 1 src/**/*.ejs dist -V"
   },
   "repository": {
     "type": "git",
